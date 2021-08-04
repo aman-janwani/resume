@@ -1,10 +1,11 @@
 import React from "react";
-
+import Zoom from 'react-reveal/Zoom';
 const Portfolio = ({ data }) => {
   if (data) {
     var projects = data.projects.map(function (projects) {
       var projectImage = "images/portfolio/" + projects.image;
       return (
+        <Zoom bottom>
         <div key={projects.title} className="columns portfolio-item">
           <div className="item-wrap">
             <a href={projects.url} title={projects.title}>
@@ -21,6 +22,7 @@ const Portfolio = ({ data }) => {
             </a>
           </div>
         </div>
+        </Zoom>
       );
     });
   }

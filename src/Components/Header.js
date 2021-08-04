@@ -1,5 +1,6 @@
 import React from "react";
 import TypeWriter from "react-typewriter";
+import Zoom from "react-reveal/Zoom";
 
 const Header = ({ data }) => {
   if (data) {
@@ -50,11 +51,6 @@ const Header = ({ data }) => {
             </a>
           </li>
           <li>
-            <a className="smoothscroll" href="#testimonials">
-              Testimonials
-            </a>
-          </li>
-          <li>
             <a className="smoothscroll" href="#contact">
               Contact
             </a>
@@ -63,16 +59,20 @@ const Header = ({ data }) => {
       </nav>
 
       <div className="row banner">
-        <div className="banner-text">
-          <h1 className="responsive-headline">
-            <TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter>
-          </h1>
-          <h3>
-            Based in {city}. <span>{occupation}</span>. {description}.
-          </h3>
-          <hr />
-          <ul className="social">{networks}</ul>
-        </div>
+        <Zoom top>
+          <div className="banner-text">
+            <h1 className="responsive-headline">
+              <TypeWriter typing={0.5}>
+                {name ? `I'm ${name}.` : null}
+              </TypeWriter>
+            </h1>
+            <h3>
+              Based in {city}. <span>{occupation}</span>. {description}.
+            </h3>
+            <hr />
+            <ul className="social">{networks}</ul>
+          </div>
+        </Zoom>
       </div>
 
       <p className="scrolldown">
